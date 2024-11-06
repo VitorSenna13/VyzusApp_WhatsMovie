@@ -1,17 +1,23 @@
-import { Container, Title, Info, ContCapa, ImageCapa, ContInfo, Genre, Duration, ContCritic, Public, Critic, NoteCritic, ContainerTabs } from "./style";
+import { useContext } from "react";
+import { Container, Title, Info, ContCapa, ImageCapa, ContInfo,
+     Genre, Duration, ContCritic, Public, Critic, NoteCritic, ContainerTabs, Description } from "./style";
 import { HeaderPerson } from "../../componentes/HeaderPerson";
 import { Cover } from "../../componentes/Cover";
 import { Ionicons } from '@expo/vector-icons';
+import { BtnStreaming } from "../../componentes/BtnStreaming";
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { handleAsyncStorage } from "../../context/storage";
+import { ContextData } from "../../context/context";
+import { theme } from "../../theme/theme";
 
-function TopTabsDetails({route}){
+function TopTabsDetails(props){
 
     const Tab = createMaterialTopTabNavigator();
 
     const DescriptionData = () => {
         return(
             <ContainerTabs>
-
+                <Description>{props.description}</Description>
             </ContainerTabs>
         )
     }
@@ -19,7 +25,12 @@ function TopTabsDetails({route}){
     const WhatsData = () => {
         return(
             <ContainerTabs>
-                
+                {
+                props.streamings? 
+                    props.streamings
+                : 
+                    <Description>Não está disponivel em nenhum Streaming</Description>
+                }
             </ContainerTabs>
         )
     }
@@ -27,7 +38,7 @@ function TopTabsDetails({route}){
     return(
         <Tab.Navigator 
         screenOptions={{
-          tabBarIndicatorContainerStyle: {backgroundColor: '#404040'},
+          tabBarIndicatorContainerStyle: {backgroundColor: theme.navbar},
           tabBarInactiveTintColor: '#fff',
           tabBarActiveTintColor: '#fff',
           tabBarIndicatorStyle: {backgroundColor: '#FF3232'}
@@ -42,9 +53,25 @@ function TopTabsDetails({route}){
 
 export function Details({route}){
 
+    const {data, setData} = useContext(ContextData);
+
+    function vizStreaming(){
+        if(route.params.info.streamings){
+
+            const streamings = route.params.info.streamings;
+
+            return streamings.map((results, index) => (
+                <BtnStreaming key={index} streaming={results} />
+            ));
+            
+        }
+    }
+
+    const found = data ? data.find(item => route.params.id === item.id) : null;
+
     return(
         <Container>
-            <HeaderPerson title="Detalhes" icon="bookmark-outline"/>
+            <HeaderPerson title="Detalhes" icon={found ? 'bookmark' : 'bookmark-outline'} click={() => handleAsyncStorage(route.params, setData)}/>
 
             <Cover uri={route.params ? route.params.banner : null}>
                 <ContCapa>
@@ -55,7 +82,7 @@ export function Details({route}){
                     <Info>
                         <Title>{route.params ? route.params.name : null}</Title>
                         <Genre>{route.params ? route.params.genre : null}</Genre>
-                        <Duration>{route.params ? route.params.time : null}</Duration>
+                        <Duration>{route.params ? route.params.year : null} | {route.params ? route.params.time : null}</Duration>
                     </Info>
                     
                     <ContCritic>
@@ -72,7 +99,10 @@ export function Details({route}){
                 </ContInfo>
             </Cover>
 
-            <TopTabsDetails/>
+            <TopTabsDetails 
+                description={route.params ? route.params.info.description : null}
+                streamings={route.params ? vizStreaming() : null}
+            />
             
         </Container>
     )

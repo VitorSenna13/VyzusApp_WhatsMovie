@@ -1,11 +1,12 @@
 import styled from "styled-components/native";
+import { theme } from "../../theme/theme";
 
 export const Container = styled.View`
     width: 100%;
     padding: 15px 10px;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #353535;
+    background-color: ${theme.navbar};
 `;
 
 export const BackButton = styled.TouchableOpacity`

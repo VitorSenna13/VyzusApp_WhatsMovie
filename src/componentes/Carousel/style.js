@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { theme } from "../../theme/theme";
 
 export const Container = styled.View`
     flex: 0.5;
@@ -8,5 +9,5 @@ export const Container = styled.View`
 `;
 
 export const List = styled.FlatList`
-    background-color: #404040;
+    background-color: ${theme.background};
 `;

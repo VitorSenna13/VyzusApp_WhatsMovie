@@ -1,8 +1,9 @@
 import styled from "styled-components/native";
+import { theme } from "../../theme/theme";
 
 export const Container = styled.View`
     flex: 1;
-    background-color: #404040;
+    background-color: ${theme.background};
 `;
 
 export const TextTitle = styled.Text`

@@ -16,7 +16,7 @@ export function HeaderPerson(props){
                 <Title>{props.title}</Title>
             </ContTitle>
 
-            <LeftButton>
+            <LeftButton onPress={props.click}>
                 <Ionicons name={props.icon} size={35} color="#fff" />
             </LeftButton>
         </Container>

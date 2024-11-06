@@ -1,8 +1,9 @@
 import styled from "styled-components/native";
+import { theme } from "../../theme/theme";
 
 export const Container = styled.View`
     flex: 1;
-    background-color: #404040;
+    background-color: ${theme.background};
 `
 
 export const Info = styled.View`
@@ -13,7 +14,7 @@ export const Title = styled.Text`
     padding-top: 5px;
     font-size: 20px;
     font-weight: 500;
-    color: #fff;
+    color: ${theme.textColor};
 `;
 
 export const ContCapa = styled.View`
@@ -69,8 +70,16 @@ export const NoteCritic = styled.Text`
     color: #fff;
 `;
 
-export const ContainerTabs = styled.View`
+export const ContainerTabs = styled.ScrollView`
     width: 100%;
     height: 100%;
-    background-color: #404040;
+    background-color: ${theme.background};
+    padding: 35px;
+`
+
+export const Description = styled.Text`
+    padding-bottom: 60px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
 `

@@ -10,7 +10,7 @@ export function StackRoutes(){
         <Stack.Navigator
             screenOptions={{
                 headerTitleAlign: 'center',
-                headerStyle: {backgroundColor: '#353535'},
+                headerStyle: {backgroundColor: '#242A32'},
                 headerTintColor: '#fff'
             }}
         >

@@ -11,38 +11,26 @@ export function DrawerRoutes(){
     return(
         <Drawer.Navigator
         screenOptions={{
-            drawerStyle: {backgroundColor: '#353535'},
-            drawerInactiveTintColor: '#fff'
+            drawerStyle: {backgroundColor: '#242A32'},
+            drawerInactiveTintColor: '#fff',
+            headerStyle: {backgroundColor: '#242A32'},
+            headerTintColor: '#fff',
+            headerTitleAlign: 'center'
         }}
         >
             <Drawer.Screen
                 name="Home"
                 component={Home}
-                options={{
-                    headerStyle: {backgroundColor: '#353535'},
-                    headerTintColor: '#fff',
-                    headerTitleAlign: 'center',
-                }}
             />
 
             <Drawer.Screen
                 name="Filmes"
                 component={Movies}
-                options={{
-                    headerStyle: {backgroundColor: '#353535'},
-                    headerTintColor: '#fff',
-                    headerTitleAlign: 'center',
-                }}
             />
 
             <Drawer.Screen
                 name="Series"
                 component={Series}
-                options={{
-                    headerStyle: {backgroundColor: '#353535'},
-                    headerTintColor: '#fff',
-                    headerTitleAlign: 'center',
-                }}
             />
 
         </Drawer.Navigator>

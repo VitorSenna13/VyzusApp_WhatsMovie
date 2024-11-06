@@ -3,6 +3,7 @@ import { Search } from "../../screens/search";
 import { Saved } from "../../screens/saved";
 import { DrawerRoutes } from "../drawer";
 import { Ionicons } from '@expo/vector-icons';
+import { theme } from '../../theme/theme';
 
 export function TabRoutes(){
 
@@ -11,10 +12,13 @@ export function TabRoutes(){
     return(
         <Tab.Navigator 
         screenOptions={{
-            tabBarStyle: {backgroundColor: '#353535', height: 70},
+            tabBarStyle: {backgroundColor: '#242A32', height: 70},
             tabBarLabelStyle: {bottom: 10},
             tabBarInactiveTintColor: "#67686D",
             tabBarActiveTintColor: "#fff",
+            headerStyle: {backgroundColor: theme.navbar},
+            headerTintColor: theme.textColor,
+            headerTitleAlign: 'center',
             headerShown: false
         }}
         >
@@ -37,6 +41,7 @@ export function TabRoutes(){
                 name="Search"
                 component={Search}
                 options={{
+                    title: 'Pesquisar',
                     tabBarIcon: ({size, color}) => <Ionicons name="search" size={size} color={color}/>
                 }}
             />
@@ -45,6 +50,8 @@ export function TabRoutes(){
                 name="Saved"
                 component={Saved}
                 options={{
+                    title: 'Salvos',
+                    headerShown: true,
                     tabBarIcon: ({size, color, focused}) => {
                         if(focused){
                             return <Ionicons name="bookmark" size={size} color={color}/>

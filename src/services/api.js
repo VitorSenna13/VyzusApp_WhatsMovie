@@ -10,7 +10,11 @@ export const moviesApi = [
         date: '26 de Julho',
         year: '2024',
         genre: 'Ação/Aventura/Comédia',
-        class: 'Filme'
+        class: 'Filme',
+        info: {
+            description: 'A existência pacífica de Deadpool desaba quando a Time Variance Authority o recruta para ajudar a proteger o multiverso. Ele logo se une ao seu suposto amigo, Wolverine, para completar a missão e salvar seu mundo de uma ameaça existencial.',
+            trailler: ''
+        }
     },
     {
         id: 2,
@@ -23,7 +27,12 @@ export const moviesApi = [
         date: '14 de Junho',
         year: '2024',
         genre: 'Animação/Aventura/Comédia',
-        class: 'Filme'
+        class: 'Filme',
+        info: {
+            description: 'As pequenas vozinhas dentro da cabeça de Riley a conhecem por dentro e por fora, mas no próximo verão, tudo muda quando Divertida Mente 2, da Disney e Pixar, apresenta uma nova Emoção: Ansiedade.',
+            streamings: ['Disney+'],
+            trailler: ''
+        }
     },
     {
         id: 3,
@@ -36,7 +45,12 @@ export const moviesApi = [
         date: '19 de Julho',
         year: '2024',
         genre: 'Ação/Aventura/Mistério & Suspense',
-        class: 'Filme'
+        class: 'Filme',
+        info: {
+            description: 'Daisy Edgar-Jones estrela como Kate Cooper, uma ex-caçadora de tempestades assombrada por um encontro devastador com um tornado durante seus anos de faculdade, que agora estuda padrões de tempestades em telas com segurança na cidade de Nova York. Ela é atraída de volta às planícies abertas por seu amigo, Javi (o indicado ao Globo de Ouro Anthony Ramos, In the Heights) para testar um novo sistema de rastreamento inovador. Lá, ela cruza o caminho de Tyler Owens (Glen Powell), o charmoso e imprudente superstar da mídia social que prospera postando suas aventuras de caça a tempestades com sua equipe barulhenta, quanto mais perigosas, melhor. À medida que a temporada de tempestades se intensifica, fenômenos aterrorizantes nunca vistos antes são desencadeados, e Kate, Tyler e suas equipes concorrentes se encontram diretamente nos caminhos de vários sistemas de tempestades convergindo sobre o centro de Oklahoma na luta de suas vidas.',
+            streamings: ['Apple TV'],
+            trailler: ''
+        }
     },
     {
         id: 4,
@@ -49,7 +63,12 @@ export const moviesApi = [
         date: '3 de Julho',
         year: '2024',
         genre: 'Animação/Comédia/Aventura',
-        class: 'Filme'
+        class: 'Filme',
+        info: {
+            description: 'No primeiro filme Meu Malvado Favorito em sete anos, Gru, o supervilão favorito do mundo que virou agente da Liga Anti-Vilões, retorna para uma nova e emocionante era de caos dos Minions em Meu Malvado Favorito 4, da Illumination. Após o fenômeno de sucesso de bilheteria do verão de 2022, Minions: A Ascensão de Gru, da Illumination, que arrecadou quase US$ 1 bilhão em todo o mundo, a maior franquia global de animação da história agora começa um novo capítulo quando Gru (o indicado ao Oscar® Steve Carrell) e Lucy (a indicada ao Oscar® Kristen Wiig) e suas filhas — Margo (Miranda Cosgrove), Edith (Dana Gaier) e Agnes (Madison Polan) — dão as boas-vindas a um novo membro da família Gru, Gru Jr., que pretende atormentar seu pai. Gru enfrenta um novo inimigo: Maxime Le Mal (o vencedor do Emmy Will Ferrell) e sua namorada femme fatale Valentina (a indicada ao Emmy Sofia Vergara), e a família é forçada a fugir.',
+            streamings: ['Apple TV'],
+            trailler: ''
+        }
     },
     {
         id: 5,
@@ -62,6 +81,11 @@ export const moviesApi = [
         date: '18 de Setembro',
         year: '2024',
         genre: 'Ação/Aventura/Comédia',
-        class: 'Série'
+        class: 'Série',
+        info: {
+            description: 'Ambientado após os eventos de "WandaVision", Agatha Harkness recruta alguns aliados improváveis ​​em sua busca para recuperar seus antigos poderes.',
+            streamings: ['Disney+'],
+            trailler: ''
+        }
     }
 ]

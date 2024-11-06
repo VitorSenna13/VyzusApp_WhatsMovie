@@ -1,6 +1,7 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { ListFilm } from '../ListFilm';
 import { moviesApi } from '../../services/api';
+import { theme } from '../../theme/theme';
 
 export function TopTabs(){
 
@@ -22,7 +23,7 @@ export function TopTabs(){
     return (
       <Tab.Navigator 
       screenOptions={{
-        tabBarIndicatorContainerStyle: {backgroundColor: '#404040'},
+        tabBarIndicatorContainerStyle: {backgroundColor: theme.navbar},
         tabBarInactiveTintColor: '#fff',
         tabBarActiveTintColor: '#fff',
         tabBarIndicatorStyle: {backgroundColor: '#FF3232'}
