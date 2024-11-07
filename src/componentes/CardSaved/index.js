@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 export function CardSaved(props){
 
     function filterTitle(value){
-        if(value.length < 22){
+        if(value.length < 20){
             return value;
         }
 

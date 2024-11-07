@@ -5,7 +5,7 @@ import { Carousel } from "../../componentes/Carousel";
 export function Home(){
     return(
         <Container>
-            <TextTitle>Mais visitados</TextTitle>
+            <TextTitle>Adorados pelo público</TextTitle>
                 <Carousel/>
                 <TopTabs />
         </Container>
