@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Ionicons } from '@expo/vector-icons';
+import { Fontisto } from '@expo/vector-icons';
 
 export const Container = styled.TouchableOpacity`
     width: 250px;
@@ -16,6 +16,6 @@ export const NameStreaming = styled.Text`
     color: #fff;
 `;
 
-export const LogoStreaming = styled(Ionicons)`
+export const LogoStreaming = styled(Fontisto)`
     margin: 0 10px;
 `;

@@ -7,19 +7,24 @@ export function TopTabs(){
 
     const Tab = createMaterialTopTabNavigator();
 
-    function SerieData(){
 
-        const filterSerie = moviesApi.filter(item => item.class === 'Série');
+    function NewMovies(){
+        const filterFilme = moviesApi.filter(item => item.year === '2024');
 
-        return <ListFilm columns={3} data={filterSerie} />
+        return <ListFilm columns={3} data={filterFilme} />
     }
 
-    function MovieData(){
-        const filterFilme = moviesApi.filter(item => item.class === 'Filme');
+    function Popular(){
+      const filterFilme = moviesApi.filter(item => item.public_note > 85);
 
         return <ListFilm columns={3} data={filterFilme} />
     }
     
+    function Upcoming(){
+
+      return <ListFilm columns={3} data={moviesApi} />
+    }
+
     return (
       <Tab.Navigator 
       screenOptions={{
@@ -29,8 +34,10 @@ export function TopTabs(){
         tabBarIndicatorStyle: {backgroundColor: '#FF3232'}
       }}
       >
-        <Tab.Screen name="Filmes" component={MovieData}/>
-        <Tab.Screen name="Series" component={SerieData}/>
+        <Tab.Screen name="Assistir agora" component={Upcoming}/>
+        <Tab.Screen name="Lançamentos" component={NewMovies}/>
+        <Tab.Screen name="Populares" component={Popular}/>
+        
       </Tab.Navigator>
     );
   }
